@@ -60,15 +60,16 @@ curl http://127.0.0.1:8000/api/classes/
 ###  Book a Class
 
 bash
-curl -X POST http://127.0.0.1:8000/api/bookings/ \
 
-  -H "Content-Type: application/json" \
-
-  -d '{"Class_Id": 1, "Name": "John Doe", "Email": "john@example.com"}'
 
 ### View Bookings by Email
 
 bash
+curl -X POST http://127.0.0.1:8000/api/book/ -H "Content-Type: application/json" -d "{\"Class_Id\": 1, \"Client_name\": \"sumanta\", \"Client_email\": \"sumanta@example.com\"}"
+
+curl -X POST http://127.0.0.1:8000/api/book/ -H "Content-Type: application/json" -d "{\"Class_Id\": 2, \"Client_name\": \"sumanta\", \"Client_email\": \"sumanta@example.com\"}"
+
+
 curl http://127.0.0.1:8000/api/bookings/john@example.com/
 
 
@@ -76,6 +77,8 @@ curl http://127.0.0.1:8000/api/bookings/john@example.com/
 
 bash
 curl -X DELETE http://127.0.0.1:8000/api/bookings/1/
+
+curl -X DELETE http://127.0.0.1:8000/api/cancel/29/ 
 
 ## Project Structure
 
