@@ -7,6 +7,11 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','fitness_project.settings')
 django.setup()
 
 from api.models import FitnessClass
+from api.models import FitnessClass
+
+# Delete all records
+FitnessClass.objects.all().delete()
+
 
 now =datetime.now()
 
